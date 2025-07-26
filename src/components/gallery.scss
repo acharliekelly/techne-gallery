@@ -1,0 +1,22 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: center;
+
+  .thumbnail {
+    display: inline-block;
+    margin: 0.5vw;
+    cursor: pointer;
+    opacity: 0.7;
+    border: 2px solid #ccc;
+    max-width: 10vw;
+    min-width: 60px;
+
+    &.selected {
+      border: 2px outset #000;
+      opacity: 1;
+    }
+  }
+
+}
