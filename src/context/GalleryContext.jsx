@@ -1,12 +1,13 @@
 // File: src/context/GalleryContext.jsx
 
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import cloudinaryConfig from './config/cloudinary';
+import cloudinaryConfig from '../config/cloudinary';
 
 const GalleryContext = createContext();
 
 export function GalleryProvider({children}) {
   const [artworks, setArtworks] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export function GalleryProvider({children}) {
   }, []);
 
   return (
-    <GalleryContext.Provider value={{ artworks, loading }}>
+    <GalleryContext.Provider value={{ artworks, loading, selectedIndex }}>
       {children}
     </GalleryContext.Provider>
   );
